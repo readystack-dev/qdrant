@@ -1,0 +1,47 @@
+{
+  "schema": "kitforge.build_recipe.v1",
+  "slug": "qdrant",
+  "image": "readystack/qdrant:v1.20.2-CE-ubuntu24.04-r2",
+  "build_method": "source-rebuild-rust",
+  "source": {
+    "repo": "https://github.com/qdrant/qdrant",
+    "ref": "v1.20.2",
+    "builder_image": "rust:1.98.1-bookworm",
+    "rust_toolchain": "1.98.1",
+    "rust_version_required": "1.98",
+    "cargo_features": [],
+    "_features_note": "Cargo.toml declares `default = []` \u2014 the server needs no feature flags. Explicitly NOT enabling `gpu` (pulls a GPU toolchain we cannot vendor offline) or `service_debug`/`tracing`/`tracy` (development instrumentation).",
+    "_builder_note": "tonic-build compiles the gRPC .proto files at build time and requires protoc, so protobuf-compiler must be present in the BUILD stage. edition 2024 needs rust >= 1.94; the 1.95.0 builder satisfies it. libprotobuf-dev REQUIRED alongside protobuf-compiler: prost-wkt-types build.rs imports google/protobuf/{duration,timestamp}.proto, which ship in the -dev package (well-known types), not the compiler binary.",
+    "source_date_epoch": 1795543191,
+    "source_date_epoch_provenance": "the time release v1.20.2-CE-ubuntu24.04-r2 was cut (2026-11-24T17:59:51Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 23065a0bf685, dated 2026-11-16T09:12:16Z (source.commit_epoch).",
+    "commit": "23065a0bf6857c3e5da45f6c8939cc746cc0580e",
+    "vendor_build": {
+      "kind": "web_vault",
+      "archive": "zip",
+      "zip_subdir": "dist",
+      "url": "https://github.com/qdrant/qdrant-web-ui/releases/download/v0.2.18/dist-qdrant.zip",
+      "version": "v0.2.18",
+      "sha256": "fdce24c04ec1627d2369cb8fe610ee06ad9236f82aad214aa7f294ac37372859",
+      "dst": "/qdrant/static",
+      "license": "Apache-2.0",
+      "_note": "The dashboard. Upstream's Dockerfile runs tools/sync-web-ui.sh, which downloads the LATEST qdrant-web-ui dist-qdrant.zip unpinned and copies dist/* to /qdrant/static; v0.2.18 is the release that was latest when qdrant v1.19.1 shipped (2026-09-03 vs 2026-09-04). Pinned by sha256 in the online vendor stage, copied offline. The live r1 had no /qdrant/static and no WORKDIR, so /dashboard was 404."
+    },
+    "source_date_epoch_basis": "release-cut",
+    "commit_epoch": 1794820336
+  },
+  "binaries_from_source": [
+    {
+      "name": "qdrant",
+      "main_pkg": "qdrant",
+      "features": [],
+      "out_path": "/usr/bin/qdrant",
+      "verify_subcmd": "--version",
+      "_note": "Single bin crate; Cargo.toml sets default-run = qdrant. Offline verb: cargo build --release --offline --locked."
+    }
+  ],
+  "runtime_packages": [
+    "ca-certificates",
+    "curl",
+    "tzdata"
+  ]
+}

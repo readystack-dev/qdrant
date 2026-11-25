@@ -1,0 +1,92 @@
+{
+  "apt_refresh": [
+    {
+      "min_version": "2.8.4ubuntu0.1",
+      "package": "apt",
+      "reason": "CVE-2026-109518: apt 2.8.3 -> 2.8.4ubuntu0.1"
+    },
+    {
+      "min_version": "2.8.4ubuntu0.1",
+      "package": "libapt-pkg6.0t64",
+      "reason": "CVE-2026-109518: libapt-pkg6.0t64 2.8.3 -> 2.8.4ubuntu0.1"
+    },
+    {
+      "min_version": "10.42-4ubuntu2.2",
+      "package": "libpcre2-8-0",
+      "reason": "CVE-2026-103111, CVE-2026-86145, CVE-2026-89156, CVE-2026-89157 \u2026: libpcre2-8-0 10.42-4ubuntu2.1 -> 10.42-4ubuntu2.2"
+    },
+    {
+      "min_version": "5.38.2-3.2ubuntu0.7",
+      "package": "perl-base",
+      "reason": "USN-9006-1: perl-base 5.38.2-3.2ubuntu0.6 -> 5.38.2-3.2ubuntu0.7"
+    },
+    {
+      "min_version": "0.10.6-2ubuntu0.6",
+      "package": "libssh-4",
+      "reason": "USN-9187-1: libssh-4 0.10.6-2ubuntu0.5 -> 0.10.6-2ubuntu0.6"
+    }
+  ],
+  "binaries_from_component_images": [],
+  "binaries_from_source": [
+    {
+      "features": [],
+      "main_pkg": "qdrant",
+      "name": "qdrant",
+      "out_path": "/usr/bin/qdrant",
+      "verify_subcmd": "--version"
+    }
+  ],
+  "build_method": "source-rebuild-rust",
+  "chain_id": 1229,
+  "dep_bumps": [],
+  "expected_residuals": [],
+  "images": [
+    {
+      "digest": "sha256:93ce27a88655056a51dbdd8f5f2d7ddc071c7b0070fb288a37b5a285fc83971e",
+      "ref": "rust:1.98.1-bookworm",
+      "role": "builder"
+    },
+    {
+      "digest": "sha256:93ce27a88655056a51dbdd8f5f2d7ddc071c7b0070fb288a37b5a285fc83971e",
+      "ref": "rust:1.98.1-bookworm",
+      "role": "offline_builder"
+    },
+    {
+      "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+      "ref": "ubuntu:24.04",
+      "role": "base"
+    }
+  ],
+  "mod_replaces": [],
+  "runtime_packages": [
+    "ca-certificates",
+    "curl",
+    "tzdata"
+  ],
+  "schema": "kitforge.toolchain_lock.v1",
+  "slug": "qdrant",
+  "source": {
+    "builder_image": "rust:1.98.1-bookworm",
+    "cargo_features": [],
+    "commit": "23065a0bf6857c3e5da45f6c8939cc746cc0580e",
+    "commit_epoch": 1794820336,
+    "ref": "v1.20.2",
+    "repo": "https://github.com/qdrant/qdrant",
+    "rust_toolchain": "1.98.1",
+    "rust_version_required": "1.98",
+    "source_date_epoch": 1795543191,
+    "source_date_epoch_basis": "release-cut",
+    "source_date_epoch_provenance": "the time release v1.20.2-CE-ubuntu24.04-r2 was cut (2026-11-24T17:59:51Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 23065a0bf685, dated 2026-11-16T09:12:16Z (source.commit_epoch).",
+    "vendor_build": {
+      "archive": "zip",
+      "dst": "/qdrant/static",
+      "kind": "web_vault",
+      "license": "Apache-2.0",
+      "sha256": "fdce24c04ec1627d2369cb8fe610ee06ad9236f82aad214aa7f294ac37372859",
+      "url": "https://github.com/qdrant/qdrant-web-ui/releases/download/v0.2.18/dist-qdrant.zip",
+      "version": "v0.2.18",
+      "zip_subdir": "dist"
+    }
+  },
+  "version": "v1.20.2"
+}

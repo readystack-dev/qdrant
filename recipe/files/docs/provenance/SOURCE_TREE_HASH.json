@@ -1,0 +1,9 @@
+{
+  "schema": "kitforge.source_tree_hash.v1",
+  "slug": "qdrant",
+  "repo": "https://github.com/qdrant/qdrant",
+  "ref": "v1.20.2",
+  "commit": "23065a0bf6857c3e5da45f6c8939cc746cc0580e",
+  "tree_listing_sha256": "ce1013f7ea124065ee90ecd44ebeeb3c1f8fd53f9e8817aac93ba07e1a870712",
+  "file_count": 2687
+}

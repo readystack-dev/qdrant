@@ -1,0 +1,6 @@
+image_manifest_digest=sha256:2a3c73bda032227aefe7695f8a1ae7158d6b86201152f4339f182a530e97ad90
+config_digest=sha256:133134ab2058b674ab3c0fcf9d53f5d01d03434dcb6962610e8667e5b37551aa
+tag=readystack/qdrant:v1.20.2-CE-ubuntu24.04-r2
+probe_port=6333
+probe_path=/healthz
+probe_timeout=300

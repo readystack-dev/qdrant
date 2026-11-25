@@ -1,0 +1,38 @@
+{
+  "bases": [
+    {
+      "digest": "sha256:c49256cbe5ea0188bc658a689500d70c41eb51f009a7a7be209caf60a944f3ec",
+      "layout": "bases/rust_1.98.1-bookworm_93ce27a88655.oci",
+      "ref": "rust:1.98.1-bookworm@sha256:93ce27a88655056a51dbdd8f5f2d7ddc071c7b0070fb288a37b5a285fc83971e"
+    },
+    {
+      "digest": "sha256:9a04f13b3f80ef056361e30868593b1cfd2279fe19e4081cb93a90bf56819d6a",
+      "layout": "bases/ubuntu_24.04_9c7f200c07e3.oci",
+      "ref": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289"
+    }
+  ],
+  "engine": {
+    "archive": "toolchain/buildkit.tar",
+    "image_digest": "sha256:e0e67ea9c4bb07bdef683e29f70f3b623d1eb9c82274a9ec04e6bb0511449fb0",
+    "kind": "buildkit",
+    "tag": "moby/buildkit:v0.31.2"
+  },
+  "inputs": {
+    "context": ".",
+    "dockerfile": "Dockerfile.offline.pinned",
+    "mtime_policy": "clamp",
+    "source_date_epoch": 1795543191,
+    "tree_hash": "sha256:52665696a00f9fae19b3abdddce01c6cc04187cfb8928ad2c3830c1310e8635a"
+  },
+  "probe": {
+    "http_path": "/healthz",
+    "port": 6333,
+    "timeout_s": 300
+  },
+  "schema": "readystack-rebuild-bundle/v0.1",
+  "subject": {
+    "config_digest": "sha256:133134ab2058b674ab3c0fcf9d53f5d01d03434dcb6962610e8667e5b37551aa",
+    "image_manifest_digest": "sha256:2a3c73bda032227aefe7695f8a1ae7158d6b86201152f4339f182a530e97ad90",
+    "name": "docker.io/readystack/qdrant:v1.20.2-CE-ubuntu24.04-r2"
+  }
+}
