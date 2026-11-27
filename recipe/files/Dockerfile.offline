@@ -12,7 +12,7 @@ RUN --mount=type=bind,source=vendored/build-debs,target=/tmp/bdebs \
 WORKDIR /src
 COPY vendored/qdrant-src/ .
 ENV CARGO_NET_OFFLINE=true CARGO_HOME=/usr/local/cargo RUSTUP_TOOLCHAIN=1.98.1
-ARG SOURCE_DATE_EPOCH=1795543191
+ARG SOURCE_DATE_EPOCH=1795672785
 ENV SOURCE_DATE_EPOCH=${SOURCE_DATE_EPOCH}
 RUN cargo build --release --offline --locked --bin qdrant && \
     cp target/release/qdrant /qdrant && /qdrant --version
@@ -26,7 +26,7 @@ RUN --mount=type=bind,source=vendored/debs,target=/tmp/debs \
     { [ -z "$bad" ] || { echo "vendored debs not installed at their vendored version:$bad" >&2; false; }; } && \
     rm -rf /var/lib/apt/lists/* \
            /var/log/dpkg.log /var/log/alternatives.log /var/log/apt /var/cache/ldconfig/aux-cache /var/cache/fontconfig
-ARG SOURCE_DATE_EPOCH=1795543191
+ARG SOURCE_DATE_EPOCH=1795672785
 RUN groupadd -r qdrant && useradd -r -g qdrant -d /qdrant -m qdrant && \
     mkdir -p /qdrant/storage /qdrant/snapshots /qdrant/config /qdrant/static && chown -R qdrant:qdrant /qdrant/storage /qdrant/snapshots /qdrant/config /qdrant/static && \
     : "${SOURCE_DATE_EPOCH:?SOURCE_DATE_EPOCH must be set for a reproducible build}" && \
@@ -41,7 +41,7 @@ RUN chmod 755 /usr/bin/qdrant; rm -f /qdrant/static/qdrant-web-ui.spdx.json; cho
 LABEL org.opencontainers.image.title="Qdrant"
 LABEL org.opencontainers.image.description="Qdrant provides a self-contained vector database for efficient similarity search and AI application development. It eliminates external dependencies by embedding storage directly within the service, simplifying infrastructure management for your team."
 LABEL org.opencontainers.image.source="https://github.com/qdrant/qdrant"
-LABEL org.opencontainers.image.version="v1.20.2-CE-ubuntu24.04-r2"
+LABEL org.opencontainers.image.version="v1.20.2-CE-ubuntu24.04-r3"
 LABEL org.opencontainers.image.revision="23065a0bf6857c3e5da45f6c8939cc746cc0580e"
 HEALTHCHECK --interval=5s --timeout=300s --start-period=10s \
   CMD curl -fsS -o /dev/null -w '%{http_code}' http://127.0.0.1:6333/healthz || exit 1

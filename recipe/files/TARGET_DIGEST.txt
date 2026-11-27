@@ -1,6 +1,6 @@
-image_manifest_digest=sha256:2a3c73bda032227aefe7695f8a1ae7158d6b86201152f4339f182a530e97ad90
-config_digest=sha256:133134ab2058b674ab3c0fcf9d53f5d01d03434dcb6962610e8667e5b37551aa
-tag=readystack/qdrant:v1.20.2-CE-ubuntu24.04-r2
+image_manifest_digest=sha256:05f1c2e2f6e452fcfe234a5a90ccee89760b9235bb3e1c224c7a48735cac0795
+config_digest=sha256:488bffe5e4c4a5d4177c1d01eb0b34116b37aca3bf86a824f888799aa6d39b8e
+tag=readystack/qdrant:v1.20.2-CE-ubuntu24.04-r3
 probe_port=6333
 probe_path=/healthz
 probe_timeout=300

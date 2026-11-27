@@ -24,6 +24,26 @@
       "min_version": "0.10.6-2ubuntu0.6",
       "package": "libssh-4",
       "reason": "USN-9187-1: libssh-4 0.10.6-2ubuntu0.5 -> 0.10.6-2ubuntu0.6"
+    },
+    {
+      "min_version": "1.20.1-6ubuntu2.12",
+      "package": "libgssapi-krb5-2",
+      "reason": "USN-9202-1: libgssapi-krb5-2 1.20.1-6ubuntu2.10 -> 1.20.1-6ubuntu2.12"
+    },
+    {
+      "min_version": "1.20.1-6ubuntu2.12",
+      "package": "libk5crypto3",
+      "reason": "USN-9202-1: libk5crypto3 1.20.1-6ubuntu2.10 -> 1.20.1-6ubuntu2.12"
+    },
+    {
+      "min_version": "1.20.1-6ubuntu2.12",
+      "package": "libkrb5-3",
+      "reason": "USN-9202-1: libkrb5-3 1.20.1-6ubuntu2.10 -> 1.20.1-6ubuntu2.12"
+    },
+    {
+      "min_version": "1.20.1-6ubuntu2.12",
+      "package": "libkrb5support0",
+      "reason": "USN-9202-1: libkrb5support0 1.20.1-6ubuntu2.10 -> 1.20.1-6ubuntu2.12"
     }
   ],
   "binaries_from_component_images": [],
@@ -37,7 +57,7 @@
     }
   ],
   "build_method": "source-rebuild-rust",
-  "chain_id": 1229,
+  "chain_id": 1287,
   "dep_bumps": [],
   "expected_residuals": [],
   "images": [
@@ -74,9 +94,9 @@
     "repo": "https://github.com/qdrant/qdrant",
     "rust_toolchain": "1.98.1",
     "rust_version_required": "1.98",
-    "source_date_epoch": 1795543191,
+    "source_date_epoch": 1795672785,
     "source_date_epoch_basis": "release-cut",
-    "source_date_epoch_provenance": "the time release v1.20.2-CE-ubuntu24.04-r2 was cut (2026-11-24T17:59:51Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 23065a0bf685, dated 2026-11-16T09:12:16Z (source.commit_epoch).",
+    "source_date_epoch_provenance": "the time release v1.20.2-CE-ubuntu24.04-r3 was cut (2026-11-26T05:59:45Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 23065a0bf685, dated 2026-11-16T09:12:16Z (source.commit_epoch).",
     "vendor_build": {
       "archive": "zip",
       "dst": "/qdrant/static",

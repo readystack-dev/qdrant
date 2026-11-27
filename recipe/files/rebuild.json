@@ -21,8 +21,8 @@
     "context": ".",
     "dockerfile": "Dockerfile.offline.pinned",
     "mtime_policy": "clamp",
-    "source_date_epoch": 1795543191,
-    "tree_hash": "sha256:52665696a00f9fae19b3abdddce01c6cc04187cfb8928ad2c3830c1310e8635a"
+    "source_date_epoch": 1795672785,
+    "tree_hash": "sha256:c3dc9162deacb8c084e057dfa44514fb057c2ba813e635f5bb8eae3f87b57ab9"
   },
   "probe": {
     "http_path": "/healthz",
@@ -31,8 +31,8 @@
   },
   "schema": "readystack-rebuild-bundle/v0.1",
   "subject": {
-    "config_digest": "sha256:133134ab2058b674ab3c0fcf9d53f5d01d03434dcb6962610e8667e5b37551aa",
-    "image_manifest_digest": "sha256:2a3c73bda032227aefe7695f8a1ae7158d6b86201152f4339f182a530e97ad90",
-    "name": "docker.io/readystack/qdrant:v1.20.2-CE-ubuntu24.04-r2"
+    "config_digest": "sha256:488bffe5e4c4a5d4177c1d01eb0b34116b37aca3bf86a824f888799aa6d39b8e",
+    "image_manifest_digest": "sha256:05f1c2e2f6e452fcfe234a5a90ccee89760b9235bb3e1c224c7a48735cac0795",
+    "name": "docker.io/readystack/qdrant:v1.20.2-CE-ubuntu24.04-r3"
   }
 }
